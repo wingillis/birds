@@ -1,8 +1,8 @@
 #!/bin/bash
-if ! [ -s plottingNotebook.ipynb ];
+if ! [ -s ${PWD##*/}.ipynb ];
 then
-  cp ~/Documents/MATLAB/birds/py/notebook_template.ipynb plottingNotebook.ipynb
+  cp ~/Documents/MATLAB/birds/py/notebook_template.ipynb ${PWD##*/}.ipynb
 else
   echo "Notebook exists"
 fi
-jupyter notebook plottingNotebook.ipynb
+jupyter notebook ${PWD##*/}.ipynb

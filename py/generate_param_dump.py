@@ -22,7 +22,7 @@ def old_matlab_version(f):
         return True
 
 def convert_matlab():
-    matlab_path = '/Applications/MATLAB_R2015a.app/bin/matlab'
+    matlab_path = '/Applications/MATLAB_R2015b.app/bin/matlab'
     home = os.path.expanduser('~')
     script = 'Documents/MATLAB/birds/plexon'
     out = subprocess.check_output([matlab_path, '-nodesktop', '-nosplash', '-nodisplay', '-r', "addpath('{}');{};exit;".format(os.path.join(home, script),'update_all_stim_files')])
@@ -101,6 +101,7 @@ def main():
             struct = future.result()
             mapped_data = map_data_to_file(mapped_data, struct, future_res[future])
             data = add_to_main_data(data, struct)
+    mapped_data['allfiles'] = files
     data = convert_data(data)
 
     with open(savefile, 'w') as save:

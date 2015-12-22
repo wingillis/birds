@@ -72,7 +72,7 @@ def main():
     # data_queue = Queue.Queue()
     path = 'updated'
     mapped_data = defaultdict(list)
-    files = glob('*.mat')
+    files = glob('stim*.mat')
     is_old_matlab = old_matlab_version(files[0])
     print('Converting matlab data to updated structs and hdf5 format')
     if not os.path.exists(path) and not glob('*_v73.mat') and is_old_matlab:
@@ -85,7 +85,7 @@ def main():
     elif not is_old_matlab:
         print('Files are already in hdf5 format')
     else:
-        files = glob(os.path.join(path,'*.mat'))
+        files = glob(os.path.join(path,'stim*.mat'))
     print('Generating parameters file')
     print('Need to go through {} files'.format(len(files)))
 

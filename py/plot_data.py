@@ -19,7 +19,7 @@ color_palette = [(0.7200000000000001, 0.11839999999999996, 0.07999999999999996),
  (0.7200000000000001, 0.07999999999999996, 0.42559999999999992)]
 
 def main(y_range=[-2, 2]):
-    files = glob('*.mat')
+    files = glob('stim*.mat')
     colors = sns.hls_palette(9, l=0.4, s=0.85)
     for f in files:
         handle_data(f, colors, y_range)

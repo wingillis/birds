@@ -10,7 +10,7 @@ def extract_data(f):
         fs = df['data']['tdt']['fs'].value
         dataframe = {}
         dataframe['t'] = t
-        dataframe['stim'] = stim
+        dataframe['stim'] = stim.value
         dataframe['fs'] = fs
 
     return dataframe
